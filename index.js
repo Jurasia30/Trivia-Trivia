@@ -9,7 +9,9 @@
 fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
 .then(resp => resp.json())
 .then(questionsObject => {
-    hardQuestion(questionsObject)
+    let questions = document.getElementById('trivia-display-name')
+    questions.innerHTML = hardQuestion(questionsObject)
+    
     
 })
 
@@ -17,7 +19,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
 function easyQuestion(questionsObject) {
     let questionArray = questionsObject.results
     let question = questionArray.find((element) => element.difficulty === "easy")
-    console.log(question.question)
+    return question.question
     
 }
 
@@ -31,7 +33,7 @@ function mediumQuestion(questionsObject) {
 function hardQuestion(questionsObject) {
     let questionArray = questionsObject.results
     let question = questionArray.find((element) => element.difficulty === "hard" )
-    console.log(question.question)
+    return question.question
 }
 
 function submitAnswer(question) {
@@ -39,7 +41,7 @@ function submitAnswer(question) {
     let answerValue = document.getElementById('')
     answerForm.addEventListener('submit', (event) => {
         event.preventDefault()
-        if (answerValue.value === question.correct_answer) {
+        if (answerValue.value.toLowerCase() === question.correct_answer.toLowerCase()) {
             console.log("Nice!")
         } else {
             console.log("You suck!")

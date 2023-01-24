@@ -8,18 +8,36 @@
 fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
 .then(resp => resp.json())
 .then(questionsObject => {
-    let questionsArray = questionsObject.results
+    let filmEasy = document.getElementById('F-easy')
+    filmEasy.addEventListener('click', (e) => {
+        h2.innerHTML = easyQuestion(questionsObject)
+    })
+    let filmMed = document.getElementById('F-medium')
+    filmMed.addEventListener('click', (e) => {
+        h2.innerHTML = (mediumQuestion(questionsObject)[0].question)
+    })
+    let filmMed2 = document.getElementById('F-medium2')
+    filmMed2.addEventListener('click', (e) => {
+        h2.innerHTML = (mediumQuestion(questionsObject)[1].question)
+    })
+    let filmHard = document.getElementById('F-hard')
+    filmHard.addEventListener('click', (e) => {
+        h2.innerHTML = hardQuestion(questionsObject)
+    })
+    
+    
+})
+
+function clickForQuestion(questionsObject) {
     let image = document.querySelectorAll('.questions')
     Array.from(image).forEach((element) => {
         element.addEventListener('click', (event) => {
-            console.log(event)
+            let question = questionsObject.question
+            h2.innerHTML = question
         })
+        
     })
-})
-
-    // let questions = document.getElementById('trivia-display-name')
-    // questions.innerHTML = hardQuestion(questionsObject)
-    
+}
     
 
 
@@ -33,8 +51,7 @@ function easyQuestion(questionsObject) {
 function mediumQuestion(questionsObject) {
     let questionArray = questionsObject.results
     let question = questionArray.filter((element) => element.difficulty ==="medium")
-    console.log(question[0].question)
-    console.log(question[1].question)
+    return question
 }
 
 function hardQuestion(questionsObject) {
@@ -58,13 +75,8 @@ function submitAnswer(question) {
     })
 }
 
-function clickForQuestion(questionsObject) {
-    let questionText = document.getElementById('trivia-display-name')
-    let image = document.querySelectorAll('.questions')
-    Array.from(image).forEach((element) => {
-        element.addEventListener('click', (event) => {
-            console.log(event)
-        })
-        
-    })
-}
+
+//Question Display
+const h2 = document.createElement('h2')
+h2.textContent = ""
+document.getElementById('trivia-display').append(h2)

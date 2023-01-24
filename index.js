@@ -208,6 +208,6 @@ mediumQuestionsTwo.forEach(question => {
 const hardQuestions = document.querySelectorAll("[id$='hard']")
 
 hardQuestions.forEach(question => {
-    question.textContent = 300;
+    question.textContent = 400;
 })
 

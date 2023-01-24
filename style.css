@@ -59,13 +59,23 @@ ul {
 
 
 form {
-  
+
   background: green;
-  margin:auto;
+  margin: 2em;
+
+
 }
 
 
 
 form label {
   display: block;
+}
+
+#ScoreCount {
+  position: relative;
+  left: 250px;
+  top: 75px;
+  font-size: 40px;
+  font-family: "Comic Sans MS"
 }

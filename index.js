@@ -3,17 +3,24 @@
 
 //Look up how to combine fetch requests: Promise.all()
 
-//TODO Write basic outline of what is being populated in each column
 
 //Film Fetch
 fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
 .then(resp => resp.json())
 .then(questionsObject => {
-    let questions = document.getElementById('trivia-display-name')
-    questions.innerHTML = hardQuestion(questionsObject)
-    
-    
+    let questionsArray = questionsObject.results
+    let image = document.querySelectorAll('.questions')
+    Array.from(image).forEach((element) => {
+        element.addEventListener('click', (event) => {
+            console.log(event)
+        })
+    })
 })
+
+    // let questions = document.getElementById('trivia-display-name')
+    // questions.innerHTML = hardQuestion(questionsObject)
+    
+    
 
 
 function easyQuestion(questionsObject) {
@@ -52,11 +59,12 @@ function submitAnswer(question) {
 }
 
 function clickForQuestion(questionsObject) {
-    let questionText = document.getElementById('')
-    let image = document.getElementsByClassName('questions')
-    image.addEventListener('click', (event) => {
-        let question = questionsObject.question
-        document.questionText.append(question)
+    let questionText = document.getElementById('trivia-display-name')
+    let image = document.querySelectorAll('.questions')
+    Array.from(image).forEach((element) => {
+        element.addEventListener('click', (event) => {
+            console.log(event)
+        })
         
     })
 }

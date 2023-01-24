@@ -3,31 +3,6 @@
 
 
 
-const easyQuestions = document.querySelectorAll("[id$='easy']")
-
-easyQuestions.forEach(question => {
-    question.textContent = 100;
-})
-
-const mediumQuestions = document.querySelectorAll("[id$='medium']")
-
-mediumQuestions.forEach(question => {
-    question.textContent = 200;
-})
-
-
-const mediumQuestionsTwo = document.querySelectorAll("[id$='medium-2']")
-
-mediumQuestionsTwo.forEach(question => {
-    question.textContent = 300;
-})
-
-const hardQuestions = document.querySelectorAll("[id$='hard']")
-
-hardQuestions.forEach(question => {
-    question.textContent = 300;
-})
-
 
 //First Step: Write fetch code for 5 different categories: Science and Nature(id:17), Music(id:12), Film(id:11), Math(id:19), Sports(id:21)
 
@@ -48,7 +23,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
         h2.innerHTML = (question.question)
         submitAnswer(question)
     })
-    let filmMed2 = document.getElementById('F-medium2')
+    let filmMed2 = document.getElementById('F-medium-2')
     filmMed2.addEventListener('click', (e) => {
         let question = mediumQuestion(questionsObject)[1]
         h2.innerHTML = (mediumQuestion(questionsObject)[1].question)
@@ -75,7 +50,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=17&type=multiple')
         h2.innerHTML = (question.question)
         submitAnswer(question)
     })
-    let filmMed2 = document.getElementById('SC-medium2')
+    let filmMed2 = document.getElementById('SC-medium-2')
     filmMed2.addEventListener('click', (e) => {
         let question = mediumQuestion(questionsObject)[1]
         h2.innerHTML = (mediumQuestion(questionsObject)[1].question)
@@ -99,12 +74,14 @@ fetch('https://opentdb.com/api.php?amount=20&category=12&type=multiple')
     let filmMed = document.getElementById('M-medium')
     filmMed.addEventListener('click', (e) => {
         let question = mediumQuestion(questionsObject)[0]
+        question.points = 200
         h2.innerHTML = (question.question)
         submitAnswer(question)
     })
     let filmMed2 = document.getElementById('M-medium-2')
     filmMed2.addEventListener('click', (e) => {
         let question = mediumQuestion(questionsObject)[1]
+        question.points = 300
         h2.innerHTML = (mediumQuestion(questionsObject)[1].question)
         submitAnswer(question)
     })
@@ -176,6 +153,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=21&type=multiple')
 function easyQuestion(questionsObject) {
     let questionArray = questionsObject.results
     let question = questionArray.find((element) => element.difficulty === "easy")
+    question.points = 100
     submitAnswer(question)
     return question.question
     
@@ -190,6 +168,7 @@ function mediumQuestion(questionsObject) {
 function hardQuestion(questionsObject) {
     let questionArray = questionsObject.results
     let question = questionArray.find((element) => element.difficulty === "hard" )
+    question.points = 400;
     submitAnswer(question)
     return question.question
 }
@@ -198,19 +177,80 @@ function submitAnswer(question) {
     let answerForm = document.getElementById('bottom')
     answerForm.addEventListener('submit', (event) => {
         event.preventDefault()
-        if (event.target['trivia-name-input'].value.toLowerCase() === question.correct_answer.toLowerCase()) {
-            console.log("Nice!")
-        } else {
-            console.log("You suck!")
+        const totalScore = document.querySelector('#ScoreAmount')
+        const playerInput = event.target['trivia-name-input'].value.toLowerCase()
+        const correctAnswer = question.correct_answer.toLowerCase()
+        const stupidMedium = document.querySelectorAll("[id$='medium-2']")
+        console.log(question.points)
+        if (playerInput === correctAnswer) {
+            console.log("Nice!");
+
+            switch(question.difficulty) {
+                case 'easy':
+                totalScore.textContent = parseInt(totalScore.textContent) + 100;
+                break;
+
+                case 'medium':
+                if(question.points === 300) {
+                totalScore.textContent = parseInt(totalScore.textContent) + 300;
+                }
+                if (question.points === 200) {
+                totalScore.textContent = parseInt(totalScore.textContent) + 200
+                }
+                break;
+
+                case 'hard':
+                totalScore.textContent = parseInt(totalScore.textContent) + 400;
+                break;
+
+
+
+            }
+
+        
+    
+          
+
+
 
         }
-        
-    })
-}
+    }    
+    )} 
+
 
 
 //Question Display
 const h2 = document.createElement('h2')
 h2.textContent = ""
 document.getElementById('trivia-display').append(h2)
+
+
+
+const easyQuestions = document.querySelectorAll("[id$='easy']")
+
+easyQuestions.forEach(question => {
+    question.textContent = 100;
+})
+
+const mediumQuestions = document.querySelectorAll("[id$='medium']")
+
+mediumQuestions.forEach(question => {
+    question.textContent = 200;
+})
+
+
+const mediumQuestionsTwo = document.querySelectorAll("[id$='medium-2']")
+
+mediumQuestionsTwo.forEach(question => {
+    question.textContent = 300;
+})
+
+const hardQuestions = document.querySelectorAll("[id$='hard']")
+
+hardQuestions.forEach(question => {
+    question.textContent = 400;
+})
+
+
+
 

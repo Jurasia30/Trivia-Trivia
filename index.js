@@ -17,12 +17,14 @@ fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
     filmMed.addEventListener('click', (e) => {
         let question = mediumQuestion(questionsObject)[0]
         h2.innerHTML = (question.question)
+        question.points = 200
         submitAnswer(question)
     })
     let filmMed2 = document.getElementById('F-medium-2')
     filmMed2.addEventListener('click', (e) => {
         let question = mediumQuestion(questionsObject)[1]
         h2.innerHTML = (mediumQuestion(questionsObject)[1].question)
+        question.points = 300
         submitAnswer(question)
     })
     let filmHard = document.getElementById('F-hard')
@@ -44,12 +46,14 @@ fetch('https://opentdb.com/api.php?amount=20&category=17&type=multiple')
     scienceMed.addEventListener('click', (e) => {
         let question = mediumQuestion(questionsObject)[0]
         h2.innerHTML = (question.question)
+        question.points = 200
         submitAnswer(question)
     })
     let scienceMed2 = document.getElementById('SC-medium-2')
     scienceMed2.addEventListener('click', (e) => {
         let question = mediumQuestion(questionsObject)[1]
         h2.innerHTML = (mediumQuestion(questionsObject)[1].question)
+        question.points = 300
         submitAnswer(question)
     })
     let scienceHard = document.getElementById('Sc-hard')
@@ -71,12 +75,14 @@ fetch('https://opentdb.com/api.php?amount=20&category=12&type=multiple')
     musicMed.addEventListener('click', (e) => {
         let question = mediumQuestion(questionsObject)[0]
         h2.innerHTML = (question.question)
+        question.points = 200
         submitAnswer(question)
     })
     let musicMed2 = document.getElementById('M-medium-2')
     musicMed2.addEventListener('click', (e) => {
         let question = mediumQuestion(questionsObject)[1]
         h2.innerHTML = (mediumQuestion(questionsObject)[1].question)
+        question.points = 300
         submitAnswer(question)
     })
     let musicHard = document.getElementById('M-hard')
@@ -98,12 +104,14 @@ fetch('https://opentdb.com/api.php?amount=20&category=19&type=multiple')
     mathMed.addEventListener('click', (e) => {
         let question = mediumQuestion(questionsObject)[0]
         h2.innerHTML = (question.question)
+        question.points = 200
         submitAnswer(question)
     })
     let mathMed2 = document.getElementById('MA-medium-2')
     mathMed2.addEventListener('click', (e) => {
         let question = mediumQuestion(questionsObject)[1]
         h2.innerHTML = (mediumQuestion(questionsObject)[1].question)
+        question.points = 300
         submitAnswer(question)
     })
     let mathHard = document.getElementById('MA-hard')
@@ -125,12 +133,14 @@ fetch('https://opentdb.com/api.php?amount=20&category=21&type=multiple')
     sportsMed.addEventListener('click', (e) => {
         let question = mediumQuestion(questionsObject)[0]
         h2.innerHTML = (question.question)
+        question.points = 200
         submitAnswer(question)
     })
     let sportsMed2 = document.getElementById('S-medium-2')
     sportsMed2.addEventListener('click', (e) => {
         let question = mediumQuestion(questionsObject)[1]
         h2.innerHTML = (mediumQuestion(questionsObject)[1].question)
+        question.points = 300
         submitAnswer(question)
     })
     let sportsHard = document.getElementById('S-hard')
@@ -145,6 +155,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=21&type=multiple')
 function easyQuestion(questionsObject) {
     let questionArray = questionsObject.results
     let question = questionArray.find((element) => element.difficulty === "easy")
+    question.points = 100
     submitAnswer(question)
     return question.question
     
@@ -159,6 +170,7 @@ function mediumQuestion(questionsObject) {
 function hardQuestion(questionsObject) {
     let questionArray = questionsObject.results
     let question = questionArray.find((element) => element.difficulty === "hard" )
+    question.points = 400
     submitAnswer(question)
     return question.question
 }
@@ -168,10 +180,10 @@ function submitAnswer(question) {
     answerForm.addEventListener('submit', (event) => {
         event.preventDefault()
         if (event.target['trivia-name-input'].value.toLowerCase() === question.correct_answer.toLowerCase()) {
-            console.log("Nice!")
+            console.log(question.points)
             
         } else {
-            console.log("You suck!")
+            console.log(question.points)
             
 
         }

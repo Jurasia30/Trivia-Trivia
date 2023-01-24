@@ -1,14 +1,80 @@
 body {
-  background: lightblue;
+  background: rgb(83, 83, 235);
   text-align: center;
+  border-style: dotted;
+  border-color: red;
+  border-width: 25px;
 }
 
-#trivia-nav {
+#trivia-categories {
   display: flex;
   justify-content: center;
   overflow: auto;
   width: 100%;
 }
+
+#music {
+  position: relative;
+  justify-content: center;
+  width: 10px;
+}
+
+#music-questions {
+  background-color: lightgrey;
+  width: 60px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+  
+  
+}
+
+#math-quesitons {
+  background-color: lightgrey;
+  width: 60px;
+  border: 15px solid red;
+  padding: 50px;
+  margin: 20px;
+ 
+  
+}
+
+#sports-questions {
+  background-color: lightgrey;
+  width: 60px;
+  border: 15px solid blue;
+  padding: 50px;
+  margin: 20px;
+ 
+
+}
+
+#science-questions {
+  background-color: lightgrey;
+  width: 60px;
+  border: 15px solid purple;
+  padding: 50px;
+  margin: 20px;
+ 
+
+}
+
+#film-questions {
+  background-color: lightgrey;
+  width: 60px;
+  border: 15px solid yellow;
+  padding: 50px;
+  margin: 20px;
+ 
+
+}
+
+#table {
+  background-color: green;
+  width: 500px;
+
+}
+
 
 #trivia-nav img {
   width: 150px;

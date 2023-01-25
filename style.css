@@ -30,50 +30,10 @@ ul {
   width: 10px;
 }
 
-#music-questions {
-  background-color: lightgrey;
-  width: 60px;
-  border: 15px solid green;
-  padding: 50px;
-  margin: 20px;
-  
-  
-}
-
-#math-quesitons {
-  background-color: lightgrey;
-  width: 60px;
-  border: 15px solid red;
-  padding: 50px;
-  margin: 20px;
- 
-  
-}
-
-#sports-questions {
-  background-color: lightgrey;
-  width: 60px;
-  border: 15px solid blue;
-  padding: 50px;
-  margin: 20px;
- 
-
-}
-
-#science-questions {
+.questions {
   background-color: lightgrey;
   width: 60px;
   border: 15px solid purple;
-  padding: 50px;
-  margin: 20px;
- 
-
-}
-
-#film-questions {
-  background-color: lightgrey;
-  width: 60px;
-  border: 15px solid yellow;
   padding: 50px;
   margin: 20px;
  
@@ -94,18 +54,31 @@ ul {
   border-radius: 0.5em;
 }
 
-
+#trivia-display {
+  position: relative;
+  top: 50px;
+}
 
 
 
 form {
-  
+
   background: green;
-  margin:auto;
+  margin: 2em;
+
+
 }
 
 
 
 form label {
   display: block;
+}
+
+#ScoreCount {
+  position: relative;
+  left: 250px;
+  top: 75px;
+  font-size: 40px;
+  font-family: "Comic Sans MS"
 }

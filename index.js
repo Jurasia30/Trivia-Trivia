@@ -8,12 +8,14 @@ fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
     let easy = easyQuestion(questionsObject)
     submitAnswer(easy)
     filmEasy.addEventListener('click', (e) => {
-        h2.innerHTML = easy
+        badAnswer(easy)
+        h2.innerHTML = easy.question
     })
     let filmMed = document.getElementById('F-medium')
     let question = mediumQuestion(questionsObject)[0]
     submitAnswer(question)
     filmMed.addEventListener('click', (e) => {
+        badAnswer(question)
         h2.innerHTML = (question.question)
         question.points = 200
     })
@@ -21,6 +23,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
     let med = mediumQuestion(questionsObject)[1]
     submitAnswer(med)
     filmMed2.addEventListener('click', (e) => {
+        badAnswer(med)
         h2.innerHTML = (med.question)
         med.points = 300
     })
@@ -28,7 +31,8 @@ fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
     let hard = hardQuestion(questionsObject)
     submitAnswer(hard)
     filmHard.addEventListener('click', (e) => {
-        h2.innerHTML = hard
+        badAnswer(hard)
+        h2.innerHTML = hard.question
     })
     
 })
@@ -41,12 +45,14 @@ fetch('https://opentdb.com/api.php?amount=20&category=17&type=multiple')
     let easy = easyQuestion(questionsObject)
     submitAnswer(easy)
     scienceEasy.addEventListener('click', (e) => {
-        h2.innerHTML = easy
+        badAnswer(easy)
+        h2.innerHTML = easy.question
     })
     let scienceMed = document.getElementById('SC-medium')
     let question = mediumQuestion(questionsObject)[0]
     submitAnswer(question)
     scienceMed.addEventListener('click', (e) => {
+        badAnswer(question)
         h2.innerHTML = (question.question)
         question.points = 200
     })
@@ -54,6 +60,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=17&type=multiple')
     let med = mediumQuestion(questionsObject)[1]
     submitAnswer(med)
     scienceMed2.addEventListener('click', (e) => {
+        badAnswer(med)
         h2.innerHTML = (med.question)
         med.points = 300
     })
@@ -61,7 +68,8 @@ fetch('https://opentdb.com/api.php?amount=20&category=17&type=multiple')
     let hard = hardQuestion(questionsObject)
     submitAnswer(hard)
     scienceHard.addEventListener('click', (e) => {
-        h2.innerHTML = hard
+        badAnswer(hard)
+        h2.innerHTML = hard.question
     })
     
 })
@@ -74,12 +82,14 @@ fetch('https://opentdb.com/api.php?amount=20&category=12&type=multiple')
     let easy = easyQuestion(questionsObject)
     submitAnswer(easy)
     musicEasy.addEventListener('click', (e) => {
-        h2.innerHTML = easy
+        badAnswer(easy)
+        h2.innerHTML = easy.question
     })
     let musicMed = document.getElementById('M-medium')
     let question = mediumQuestion(questionsObject)[0]
     submitAnswer(question)
     musicMed.addEventListener('click', (e) => {
+        badAnswer(question)
         question.points = 200
         h2.innerHTML = (question.question)
         
@@ -88,13 +98,18 @@ fetch('https://opentdb.com/api.php?amount=20&category=12&type=multiple')
     let med = mediumQuestion(questionsObject)[1]
     submitAnswer(med)
     musicMed2.addEventListener('click', (e) => {
+        badAnswer(med)
         h2.innerHTML = (med.question)
         med.points = 300
         
     })
     let musicHard = document.getElementById('M-hard')
+    let hard = hardQuestion(questionsObject)
+    submitAnswer(hard)
     musicHard.addEventListener('click', (e) => {
-        h2.innerHTML = hardQuestion(questionsObject)
+        badAnswer(hard)
+        h2.innerHTML = hard.question
+        
     })
     
 })
@@ -107,12 +122,14 @@ fetch('https://opentdb.com/api.php?amount=20&category=19&type=multiple')
     let easy = easyQuestion(questionsObject)
     submitAnswer(easy)
     mathEasy.addEventListener('click', (e) => {
-        h2.innerHTML = easy
+        badAnswer(easy)
+        h2.innerHTML = easy.question
     })
     let mathMed = document.getElementById('MA-medium')
     let question = mediumQuestion(questionsObject)[0]
     submitAnswer(question)
     mathMed.addEventListener('click', (e) => {
+        badAnswer(question)
         h2.innerHTML = (question.question)
         question.points = 200
     })
@@ -120,6 +137,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=19&type=multiple')
     let med= mediumQuestion(questionsObject)[1]
     submitAnswer(med)
     mathMed2.addEventListener('click', (e) => {
+        badAnswer(med)
         h2.innerHTML = (med.question)
         med.points = 300
     })
@@ -127,7 +145,8 @@ fetch('https://opentdb.com/api.php?amount=20&category=19&type=multiple')
     let hard = hardQuestion(questionsObject)
     submitAnswer(hard)
     mathHard.addEventListener('click', (e) => {
-        h2.innerHTML = hard
+        badAnswer(hard)
+        h2.innerHTML = hard.question
     })
     
 })
@@ -141,13 +160,15 @@ fetch('https://opentdb.com/api.php?amount=20&category=21&type=multiple')
     let easy = easyQuestion(questionsObject)
     submitAnswer(easy)
     sportsEasy.addEventListener('click', (e) => {
-        h2.innerHTML = easy
+        badAnswer(easy)
+        h2.innerHTML = easy.question
     })
     
     let sportsMed = document.getElementById('S-medium')
     let question = mediumQuestion(questionsObject)[0]
     submitAnswer(question)
     sportsMed.addEventListener('click', (e) => {
+        badAnswer(question)
         h2.innerHTML = (question.question)
         question.points = 200
     })
@@ -156,6 +177,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=21&type=multiple')
     let med = mediumQuestion(questionsObject)[1]
     submitAnswer(med)
     sportsMed2.addEventListener('click', (e) => {
+        badAnswer(med)
         h2.innerHTML = (med.question)
         question.points = 300
     })
@@ -163,7 +185,8 @@ fetch('https://opentdb.com/api.php?amount=20&category=21&type=multiple')
     let hard = hardQuestion(questionsObject)
     submitAnswer(hard)
     sportsHard.addEventListener('click', (e) => {
-        h2.innerHTML = hard
+        badAnswer(hard)
+        h2.innerHTML = hard.question
     })
     
 })
@@ -174,7 +197,7 @@ function easyQuestion(questionsObject) {
     let questionArray = questionsObject.results
     let question = questionArray.find((element) => element.difficulty === "easy")
     question.points = 100
-    return question.question
+    return question
     
 }
 
@@ -188,7 +211,7 @@ function hardQuestion(questionsObject) {
     let questionArray = questionsObject.results
     let question = questionArray.find((element) => element.difficulty === "hard" )
     question.points = 400
-    return question.question
+    return question
 }
 
 function submitAnswer(question) {
@@ -198,10 +221,7 @@ function submitAnswer(question) {
         const totalScore = document.querySelector('#ScoreAmount')
         const playerInput = event.target['trivia-name-input'].value.toLowerCase()
         const correctAnswer = question.correct_answer.toLowerCase()
-        const stupidMedium = document.querySelectorAll("[id$='medium-2']")
-        console.log(question.points)
         if (playerInput === correctAnswer) {
-            console.log("Nice!");
 
             switch(question.difficulty) {
                 case 'easy':
@@ -224,6 +244,7 @@ function submitAnswer(question) {
 
 
             }
+            answerForm.reset()
 
         
     
@@ -232,6 +253,7 @@ function submitAnswer(question) {
 
 
         }
+        
     }    
     )} 
 
@@ -239,8 +261,25 @@ function submitAnswer(question) {
 
 //Question Display
 const h2 = document.createElement('h2')
+const ul = document.createElement('ul')
 h2.textContent = ""
-document.getElementById('trivia-display').append(h2)
+document.getElementById('trivia-display').append(h2, ul)
+
+//Render Incorrect Answers
+function badAnswer(questionObject) {
+    ul.innerHTML = ""
+    let incorrectAns = questionObject.incorrect_answers
+    for (incorrect of incorrectAns) {
+        let li = document.createElement('li')
+        li.innerHTML = incorrect
+        ul.appendChild(li)
+    }
+    let li2 = document.createElement('li')
+    li2.innerHTML = questionObject.correct_answer
+    ul.appendChild(li2)
+
+    
+}
 
 
 

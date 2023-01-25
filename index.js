@@ -185,7 +185,6 @@ function submitAnswer(question) {
         } else {
             console.log(question.points)
             
-
         }
         answerForm.reset()
         

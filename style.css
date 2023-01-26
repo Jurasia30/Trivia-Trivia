@@ -1,9 +1,21 @@
+#line {
+     width: 90%;
+     margin: auto;
+     margin-top: 5%;
+     margin-bottom: 5%;
+     border: 3px dashed #1A85FD
+}
+
+
+
+
 body {
-  background: rgb(83, 83, 235);
+  background-image: repeating-conic-gradient(red 10%, orange 20%);
   text-align: center;
   border-style: dotted;
-  border-color: red;
+  border-color: purple;
   border-width: 25px;
+  
 }
 ol {
   border: 5px solid;
@@ -63,8 +75,9 @@ ul {
 
 form {
 
-  background: green;
+  background: purple;
   margin: 2em;
+  border: ridge;
 
 
 }
@@ -77,8 +90,8 @@ form label {
 
 #ScoreCount {
   position: relative;
-  left: 250px;
-  top: 75px;
+  left: 495px;
+  top: 78px;
   font-size: 40px;
   font-family: "Comic Sans MS"
 }

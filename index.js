@@ -214,8 +214,8 @@ function hardQuestion(questionsObject) {
     return question
 }
 
+const answerForm = document.getElementById('bottom')
 function submitAnswer(question) {
-    let answerForm = document.getElementById('bottom')
     answerForm.addEventListener('submit', (event) => {
         event.preventDefault()
         const totalScore = document.querySelector('#ScoreAmount')
@@ -240,20 +240,14 @@ function submitAnswer(question) {
                 case 'hard':
                 totalScore.textContent = parseInt(totalScore.textContent) + 400;
                 break;
-
-
-
-            }
+             }
+            
             answerForm.reset()
-
-        
+           
     
-          
-
-
-
         }
-        
+
+        stopSubmit()   
     }    
     )} 
 
@@ -265,23 +259,45 @@ const ul = document.createElement('ul')
 h2.textContent = ""
 document.getElementById('trivia-display').append(h2, ul)
 
-//Render Incorrect Answers
+//Render Answers
 function badAnswer(questionObject) {
     ul.innerHTML = ""
     let incorrectAns = questionObject.incorrect_answers
-    for (incorrect of incorrectAns) {
+    incorrectAns.push(questionObject.correct_answer)
+    let randomAns = randomizeAns(incorrectAns)
+    for (answer of randomAns) {
         let li = document.createElement('li')
-        li.innerHTML = incorrect
+        li.innerHTML = answer
         ul.appendChild(li)
-    }
-    let li2 = document.createElement('li')
-    li2.innerHTML = questionObject.correct_answer
-    ul.appendChild(li2)
-
-    
+    }  
 }
 
+//Randomize Answers
+function randomizeAns(ansArray){
+    let i = ansArray.length
+    let j = 0
+    let temp
+    
+    while (i--) {
+        j = Math.floor(Math.random() * (i+1));
+    
+        temp = ansArray[i];
+        ansArray[i] = ansArray[j];
+        ansArray[j] = temp;
+     }
+    
+        return ansArray; 
+}
 
+function stopSubmit() {
+        let allowSubmit = true;
+        answerForm.onsubmit = () => {
+           if (allowSubmit)
+               allowSubmit = false;
+           else 
+               return false;
+        }
+}
 
 const easyQuestions = document.querySelectorAll("[id$='easy']")
 

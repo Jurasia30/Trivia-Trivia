@@ -96,12 +96,12 @@
 
        
 
-      <form id="bottom" onsubmit =''>
+      <form id="bottom" onsubmit="return !!(allowForm(this) & stopForm(this))">
       
         <label for="trvia-name-input">Answer:</label>
         <input type="text" name="trivia-name-input" >
   
-        <input type="submit" value="Submit">
+        <input type="submit" name="button" value="Submit">
         
       </form>
   

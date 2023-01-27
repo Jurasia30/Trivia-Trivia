@@ -1,5 +1,4 @@
 
-
 //Film Fetch
 fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
 .then(resp => resp.json())
@@ -49,6 +48,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
     
 })
 
+
 //Science and Nature Fetch
 fetch('https://opentdb.com/api.php?amount=20&category=17&type=multiple')
 .then(resp => resp.json())
@@ -63,6 +63,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=17&type=multiple')
         allowForm(answerForm)
         crosses(scienceEasy)
     }, {once : true})
+    
     let scienceMed = document.getElementById('SC-medium')
     let question = mediumQuestion(questionsObject)[0]
     submitAnswer(question)
@@ -74,6 +75,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=17&type=multiple')
         allowForm(answerForm)
         crosses(scienceMed)
     }, {once : true})
+    
     let scienceMed2 = document.getElementById('SC-medium-2')
     let med = mediumQuestion(questionsObject)[1]
     submitAnswer(med)
@@ -85,6 +87,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=17&type=multiple')
         allowForm(answerForm)
         crosses(scienceMed2)
     }, {once : true})
+
     let scienceHard = document.getElementById('Sc-hard')
     let hard = hardQuestion(questionsObject)
     submitAnswer(hard)
@@ -94,9 +97,9 @@ fetch('https://opentdb.com/api.php?amount=20&category=17&type=multiple')
         h2.innerHTML = hard.question
         allowForm(answerForm)
         crosses(scienceHard)
-    }, {once : true})
-    
+    }, {once : true})   
 })
+
 
 //Music
 fetch('https://opentdb.com/api.php?amount=20&category=12&type=multiple')
@@ -112,6 +115,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=12&type=multiple')
         allowForm(answerForm)
         crosses(musicEasy)
     }, {once : true})
+    
     let musicMed = document.getElementById('M-medium')
     let question = mediumQuestion(questionsObject)[0]
     submitAnswer(question)
@@ -123,6 +127,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=12&type=multiple')
         allowForm(answerForm)
         crosses(musicMed)
     }, {once : true})
+
     let musicMed2 = document.getElementById('M-medium-2')
     let med = mediumQuestion(questionsObject)[1]
     submitAnswer(med)
@@ -134,6 +139,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=12&type=multiple')
         allowForm(answerForm)
         crosses(musicMed2)
     }, {once : true})
+
     let musicHard = document.getElementById('M-hard')
     let hard = hardQuestion(questionsObject)
     submitAnswer(hard)
@@ -143,8 +149,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=12&type=multiple')
         h2.innerHTML = hard.question
         allowForm(answerForm)
         crosses(musicHard)
-    }, {once : true})
-    
+    }, {once : true})    
 })
 
 //Math
@@ -161,6 +166,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=19&type=multiple')
         allowForm(answerForm)
         crosses(mathEasy)
     }, {once : true})
+
     let mathMed = document.getElementById('MA-medium')
     let question = mediumQuestion(questionsObject)[0]
     submitAnswer(question)
@@ -172,6 +178,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=19&type=multiple')
         allowForm(answerForm)
         crosses(mathMed)
     }, {once : true})
+
     let mathMed2 = document.getElementById('MA-medium-2')
     let med= mediumQuestion(questionsObject)[1]
     submitAnswer(med)
@@ -183,6 +190,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=19&type=multiple')
         allowForm(answerForm)
         crosses(mathMed2)
     }, {once : true})
+
     let mathHard = document.getElementById('MA-hard')
     let hard = hardQuestion(questionsObject)
     submitAnswer(hard)
@@ -192,8 +200,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=19&type=multiple')
         h2.innerHTML = hard.question
         allowForm(answerForm)
         crosses(mathHard)
-    }, {once : true})
-    
+    }, {once : true})  
 })
 
 //Sports
@@ -235,6 +242,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=21&type=multiple')
         allowForm(answerForm)
         crosses(sportsMed2)
     }, {once : true})
+    
     let sportsHard = document.getElementById('S-hard')
     let hard = hardQuestion(questionsObject)
     submitAnswer(hard)
@@ -244,9 +252,9 @@ fetch('https://opentdb.com/api.php?amount=20&category=21&type=multiple')
         h2.innerHTML = hard.question
         allowForm(answerForm)
         crosses(sportsHard)
-    }, {once : true})
-    
+    }, {once : true})  
 })
+
 
 
 
@@ -258,11 +266,8 @@ function easyQuestion(questionsObject) {
     
 }
 
-function mediumQuestion(questionsObject) {
-    let questionArray = questionsObject.results
-    let question = questionArray.filter((element) => element.difficulty ==="medium")
-    return question
-}
+
+
 
 function hardQuestion(questionsObject) {
     let questionArray = questionsObject.results
@@ -278,7 +283,15 @@ function submitAnswer(question) {
         const totalScore = document.querySelector('#ScoreAmount')
         const playerInput = event.target['trivia-name-input'].value.toLowerCase()
         const correctAnswer = question.correct_answer.toLowerCase()
+        function submitAnswer(question) {
+    let answerForm = document.getElementById('bottom')
+    answerForm.addEventListener('submit', (event) => {
+        event.preventDefault()
+        const totalScore = document.querySelector('#ScoreAmount')
+        const playerInput = event.target['trivia-name-input'].value.toLowerCase()
+        const correctAnswer = question.correct_answer.toLowerCase()
         if (playerInput === correctAnswer) {
+
 
             switch(question.difficulty) {
                 case 'easy':
@@ -297,19 +310,23 @@ function submitAnswer(question) {
                 case 'hard':
                 totalScore.textContent = parseInt(totalScore.textContent) + 400;
                 break;
-             }
-            
-           
-    
-        }
 
+            }
         answerForm.reset()
         stopForm(answerForm)   
     }    
     )} 
 
 
+function crosses (div) {
 
+       lineOne = document.createElement('h1')
+        lineOne.classList.add('diagnolLineOne');
+        div.append(lineOne);
+        lineTwo = document.createElement('h1')
+        lineTwo.classList.add('diagnolLineTwo');
+        div.append(lineTwo)
+=======
 //Question Display
 const h2 = document.createElement('h2')
 const ul = document.createElement('ul')
@@ -341,7 +358,6 @@ function randomizeAns(ansArray){
         ansArray[i] = ansArray[j];
         ansArray[j] = temp;
      }
-    
         return ansArray; 
 }
 
@@ -404,8 +420,48 @@ const hardQuestions = document.querySelectorAll("[id$='hard']")
 
 hardQuestions.forEach(question => {
     question.textContent = 400;
-})
+})//})
+
+//Film Fetch
+fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
+.then(resp => resp.json())
+.then(questionsObject => {
+    let filmEasy = document.getElementById('F-easy')
+    let easy = easyQuestion(questionsObject)
+    submitAnswer(easy)
+    filmEasy.addEventListener('click', (e) => {
+        badAnswer(easy)
+        h2.innerHTML = easy.question
+        crosses(filmEasy)
 
 
+    })
+    let filmMed = document.getElementById('F-medium')
+    let question = mediumQuestion(questionsObject)[0]
+    submitAnswer(question)
+    filmMed.addEventListener('click', (e) => {
+        badAnswer(question)
+        h2.innerHTML = (question.question)
+        question.points = 200
+        crosses(filmMed)
 
-
+    })
+    let filmMed2 = document.getElementById('F-medium-2')
+    let med = mediumQuestion(questionsObject)[1]
+    submitAnswer(med)
+    filmMed2.addEventListener('click', (e) => {
+        badAnswer(med)
+        h2.innerHTML = (med.question)
+        med.points = 300
+        crosses(filmMed2)
+    })
+    let filmHard = document.getElementById('F-hard')
+    let hard = hardQuestion(questionsObject)
+    submitAnswer(hard)
+    filmHard.addEventListener('click', (e) => {
+        badAnswer(hard)
+        h2.innerHTML = hard.question
+        crosses(filmHard)
+    })
+    
+})})

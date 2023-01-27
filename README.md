@@ -1,5 +1,6 @@
 # Trivia-Trivia
-![2023-01-26](https://user-images.githubusercontent.com/117475957/214928079-3b22cb53-096f-42e9-8c89-adf62c3ebee5.png)
+
+<img width="1440" alt="Screenshot 2023-01-26 at 3 01 45 PM (1)" src="https://user-images.githubusercontent.com/117475957/215120536-e96c6bc3-1ab6-4d2d-930b-a4e082084cfa.png">
 
 
 

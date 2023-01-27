@@ -4,6 +4,12 @@
     <meta charset="utf-8">
     <script defer src="index.js" charset="utf-8"></script>
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width">
+    <style>
+      img {
+          max-width: 100%;
+      }
+      </style>
 
     <title>Trivia Trivia</title>
    
@@ -20,6 +26,7 @@
       <div id="music-cateogry">
         
          <!-- M = music, MA = math, S = sports, SC = science, F= film -->
+
          <ul>
 
          <img src = "https://thumbs.dreamstime.com/b/music-guitar-illustration-25765594.jpg"
@@ -28,6 +35,7 @@
           
         </ul>
        
+
        <div class="questions" id="M-easy"></div>
        <div class="questions" id="M-medium"></div>
        <div class="questions" id="M-medium-2"></div>
@@ -90,18 +98,23 @@
         </div>
       </div>
 
+      <div id="line"></div>
+
       <div id="trivia-display"></div>
+
+      
 
       <span id="ScoreCount">Score:<span id="ScoreAmount">0</span></span>
 
        
 
-      <form id="bottom">
+      <form id="bottom" onsubmit="return !!(allowForm(this) & stopForm(this))">
       
         <label for="trvia-name-input">Answer:</label>
         <input type="text" name="trivia-name-input" >
   
-        <input type="submit" value="Submit">
+        <input type="submit" name="button" value="Submit">
+        
       </form>
   
 

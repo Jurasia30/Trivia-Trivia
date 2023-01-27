@@ -1,5 +1,4 @@
 
-
 //Film Fetch
 fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
 .then(resp => resp.json())
@@ -7,35 +6,48 @@ fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
     let filmEasy = document.getElementById('F-easy')
     let easy = easyQuestion(questionsObject)
     submitAnswer(easy)
+    mouseOver(filmEasy)
     filmEasy.addEventListener('click', (e) => {
-        badAnswer(easy)
+        renderAnswer(easy)
         h2.innerHTML = easy.question
-    })
+        allowForm(answerForm)
+        crosses(filmEasy)
+    }, {once : true})
     let filmMed = document.getElementById('F-medium')
     let question = mediumQuestion(questionsObject)[0]
     submitAnswer(question)
+    mouseOver(filmMed)
     filmMed.addEventListener('click', (e) => {
-        badAnswer(question)
+        renderAnswer(question)
         h2.innerHTML = (question.question)
         question.points = 200
-    })
+        allowForm(answerForm)
+        crosses(filmMed)
+    }, {once : true})
     let filmMed2 = document.getElementById('F-medium-2')
     let med = mediumQuestion(questionsObject)[1]
     submitAnswer(med)
+    mouseOver(filmMed2)
     filmMed2.addEventListener('click', (e) => {
-        badAnswer(med)
+        renderAnswer(med)
         h2.innerHTML = (med.question)
         med.points = 300
-    })
+        allowForm(answerForm)
+        crosses(filmMed2)
+    }, {once : true})
     let filmHard = document.getElementById('F-hard')
     let hard = hardQuestion(questionsObject)
     submitAnswer(hard)
+    mouseOver(filmHard)
     filmHard.addEventListener('click', (e) => {
-        badAnswer(hard)
+        renderAnswer(hard)
         h2.innerHTML = hard.question
-    })
+        allowForm(answerForm)
+        crosses(filmHard)
+    }, {once : true})
     
 })
+
 
 //Science and Nature Fetch
 fetch('https://opentdb.com/api.php?amount=20&category=17&type=multiple')
@@ -44,35 +56,50 @@ fetch('https://opentdb.com/api.php?amount=20&category=17&type=multiple')
     let scienceEasy = document.getElementById('SC-easy')
     let easy = easyQuestion(questionsObject)
     submitAnswer(easy)
+    mouseOver(scienceEasy)
     scienceEasy.addEventListener('click', (e) => {
-        badAnswer(easy)
+        renderAnswer(easy)
         h2.innerHTML = easy.question
-    })
+        allowForm(answerForm)
+        crosses(scienceEasy)
+    }, {once : true})
+    
     let scienceMed = document.getElementById('SC-medium')
     let question = mediumQuestion(questionsObject)[0]
     submitAnswer(question)
+    mouseOver(scienceMed)
     scienceMed.addEventListener('click', (e) => {
-        badAnswer(question)
+        renderAnswer(question)
         h2.innerHTML = (question.question)
         question.points = 200
-    })
+        allowForm(answerForm)
+        crosses(scienceMed)
+    }, {once : true})
+    
     let scienceMed2 = document.getElementById('SC-medium-2')
     let med = mediumQuestion(questionsObject)[1]
     submitAnswer(med)
+    mouseOver(scienceMed2)
     scienceMed2.addEventListener('click', (e) => {
-        badAnswer(med)
+        renderAnswer(med)
         h2.innerHTML = (med.question)
         med.points = 300
-    })
+        allowForm(answerForm)
+        crosses(scienceMed2)
+    }, {once : true})
+
     let scienceHard = document.getElementById('Sc-hard')
     let hard = hardQuestion(questionsObject)
     submitAnswer(hard)
+    mouseOver(scienceHard)
     scienceHard.addEventListener('click', (e) => {
-        badAnswer(hard)
+        renderAnswer(hard)
         h2.innerHTML = hard.question
-    })
-    
+        allowForm(answerForm)
+        crosses(scienceHard)
+    }, {once : true})   
 })
+
 
 //Music
 fetch('https://opentdb.com/api.php?amount=20&category=12&type=multiple')
@@ -81,37 +108,48 @@ fetch('https://opentdb.com/api.php?amount=20&category=12&type=multiple')
     let musicEasy = document.getElementById('M-easy')
     let easy = easyQuestion(questionsObject)
     submitAnswer(easy)
+    mouseOver(musicEasy)
     musicEasy.addEventListener('click', (e) => {
-        badAnswer(easy)
+        renderAnswer(easy)
         h2.innerHTML = easy.question
-    })
+        allowForm(answerForm)
+        crosses(musicEasy)
+    }, {once : true})
+    
     let musicMed = document.getElementById('M-medium')
     let question = mediumQuestion(questionsObject)[0]
     submitAnswer(question)
+    mouseOver(musicMed)
     musicMed.addEventListener('click', (e) => {
-        badAnswer(question)
+        renderAnswer(question)
         question.points = 200
         h2.innerHTML = (question.question)
-        
-    })
+        allowForm(answerForm)
+        crosses(musicMed)
+    }, {once : true})
+
     let musicMed2 = document.getElementById('M-medium-2')
     let med = mediumQuestion(questionsObject)[1]
     submitAnswer(med)
+    mouseOver(musicMed2)
     musicMed2.addEventListener('click', (e) => {
-        badAnswer(med)
+        renderAnswer(med)
         h2.innerHTML = (med.question)
         med.points = 300
-        
-    })
+        allowForm(answerForm)
+        crosses(musicMed2)
+    }, {once : true})
+
     let musicHard = document.getElementById('M-hard')
     let hard = hardQuestion(questionsObject)
     submitAnswer(hard)
+    mouseOver(musicHard)
     musicHard.addEventListener('click', (e) => {
-        badAnswer(hard)
+        renderAnswer(hard)
         h2.innerHTML = hard.question
-        
-    })
-    
+        allowForm(answerForm)
+        crosses(musicHard)
+    }, {once : true})    
 })
 
 //Math
@@ -121,34 +159,48 @@ fetch('https://opentdb.com/api.php?amount=20&category=19&type=multiple')
     let mathEasy = document.getElementById('MA-easy')
     let easy = easyQuestion(questionsObject)
     submitAnswer(easy)
+    mouseOver(mathEasy)
     mathEasy.addEventListener('click', (e) => {
-        badAnswer(easy)
+        renderAnswer(easy)
         h2.innerHTML = easy.question
-    })
+        allowForm(answerForm)
+        crosses(mathEasy)
+    }, {once : true})
+
     let mathMed = document.getElementById('MA-medium')
     let question = mediumQuestion(questionsObject)[0]
     submitAnswer(question)
+    mouseOver(mathMed)
     mathMed.addEventListener('click', (e) => {
-        badAnswer(question)
+        renderAnswer(question)
         h2.innerHTML = (question.question)
         question.points = 200
-    })
+        allowForm(answerForm)
+        crosses(mathMed)
+    }, {once : true})
+
     let mathMed2 = document.getElementById('MA-medium-2')
     let med= mediumQuestion(questionsObject)[1]
     submitAnswer(med)
+    mouseOver(mathMed2)
     mathMed2.addEventListener('click', (e) => {
-        badAnswer(med)
+        renderAnswer(med)
         h2.innerHTML = (med.question)
         med.points = 300
-    })
+        allowForm(answerForm)
+        crosses(mathMed2)
+    }, {once : true})
+
     let mathHard = document.getElementById('MA-hard')
     let hard = hardQuestion(questionsObject)
     submitAnswer(hard)
+    mouseOver(mathHard)
     mathHard.addEventListener('click', (e) => {
-        badAnswer(hard)
+        renderAnswer(hard)
         h2.innerHTML = hard.question
-    })
-    
+        allowForm(answerForm)
+        crosses(mathHard)
+    }, {once : true})  
 })
 
 //Sports
@@ -159,37 +211,50 @@ fetch('https://opentdb.com/api.php?amount=20&category=21&type=multiple')
     let sportsEasy = document.getElementById('S-easy')
     let easy = easyQuestion(questionsObject)
     submitAnswer(easy)
+    mouseOver(sportsEasy)
     sportsEasy.addEventListener('click', (e) => {
-        badAnswer(easy)
+        renderAnswer(easy)
         h2.innerHTML = easy.question
-    })
+        allowForm(answerForm)
+        crosses(sportsEasy)
+    }, {once : true})
     
     let sportsMed = document.getElementById('S-medium')
     let question = mediumQuestion(questionsObject)[0]
     submitAnswer(question)
+    mouseOver(sportsMed)
     sportsMed.addEventListener('click', (e) => {
-        badAnswer(question)
+        renderAnswer(question)
         h2.innerHTML = (question.question)
         question.points = 200
-    })
+        allowForm(answerForm)
+        crosses(sportsMed)
+    }, {once : true})
     
     let sportsMed2 = document.getElementById('S-medium-2')
     let med = mediumQuestion(questionsObject)[1]
     submitAnswer(med)
+    mouseOver(sportsMed2)
     sportsMed2.addEventListener('click', (e) => {
-        badAnswer(med)
+        renderAnswer(med)
         h2.innerHTML = (med.question)
         question.points = 300
-    })
+        allowForm(answerForm)
+        crosses(sportsMed2)
+    }, {once : true})
+    
     let sportsHard = document.getElementById('S-hard')
     let hard = hardQuestion(questionsObject)
     submitAnswer(hard)
+    mouseOver(sportsHard)
     sportsHard.addEventListener('click', (e) => {
-        badAnswer(hard)
+        renderAnswer(hard)
         h2.innerHTML = hard.question
-    })
-    
+        allowForm(answerForm)
+        crosses(sportsHard)
+    }, {once : true})  
 })
+
 
 
 
@@ -201,11 +266,8 @@ function easyQuestion(questionsObject) {
     
 }
 
-function mediumQuestion(questionsObject) {
-    let questionArray = questionsObject.results
-    let question = questionArray.filter((element) => element.difficulty ==="medium")
-    return question
-}
+
+
 
 function hardQuestion(questionsObject) {
     let questionArray = questionsObject.results
@@ -214,7 +276,14 @@ function hardQuestion(questionsObject) {
     return question
 }
 
+const answerForm = document.getElementById('bottom')
 function submitAnswer(question) {
+    answerForm.addEventListener('submit', (event) => {
+        event.preventDefault()
+        const totalScore = document.querySelector('#ScoreAmount')
+        const playerInput = event.target['trivia-name-input'].value.toLowerCase()
+        const correctAnswer = question.correct_answer.toLowerCase()
+        function submitAnswer(question) {
     let answerForm = document.getElementById('bottom')
     answerForm.addEventListener('submit', (event) => {
         event.preventDefault()
@@ -222,6 +291,7 @@ function submitAnswer(question) {
         const playerInput = event.target['trivia-name-input'].value.toLowerCase()
         const correctAnswer = question.correct_answer.toLowerCase()
         if (playerInput === correctAnswer) {
+
 
             switch(question.difficulty) {
                 case 'easy':
@@ -241,46 +311,90 @@ function submitAnswer(question) {
                 totalScore.textContent = parseInt(totalScore.textContent) + 400;
                 break;
 
-
-
             }
-            answerForm.reset()
-
-        
-    
-          
-
-
-
-        }
-        
+        answerForm.reset()
+        stopForm(answerForm)   
     }    
     )} 
 
 
+function crosses (div) {
 
+       lineOne = document.createElement('h1')
+        lineOne.classList.add('diagnolLineOne');
+        div.append(lineOne);
+        lineTwo = document.createElement('h1')
+        lineTwo.classList.add('diagnolLineTwo');
+        div.append(lineTwo)
+=======
 //Question Display
 const h2 = document.createElement('h2')
 const ul = document.createElement('ul')
 h2.textContent = ""
 document.getElementById('trivia-display').append(h2, ul)
 
-//Render Incorrect Answers
-function badAnswer(questionObject) {
+//Render Answers
+function renderAnswer(questionObject) {
     ul.innerHTML = ""
     let incorrectAns = questionObject.incorrect_answers
-    for (incorrect of incorrectAns) {
+    incorrectAns.push(questionObject.correct_answer)
+    let randomAns = randomizeAns(incorrectAns)
+    for (answer of randomAns) {
         let li = document.createElement('li')
-        li.innerHTML = incorrect
+        li.innerHTML = answer
         ul.appendChild(li)
-    }
-    let li2 = document.createElement('li')
-    li2.innerHTML = questionObject.correct_answer
-    ul.appendChild(li2)
-
-    
+    }  
 }
 
+//Randomize Answers
+function randomizeAns(ansArray){
+    let i = ansArray.length
+    let j = 0
+    let temp
+    
+    while (i--) {
+        j = Math.floor(Math.random() * (i+1));
+        temp = ansArray[i];
+        ansArray[i] = ansArray[j];
+        ansArray[j] = temp;
+     }
+        return ansArray; 
+}
+
+//Stop Submit Function
+function stopForm(form) {
+        form.button.disabled = true;
+        return true
+}
+
+//Allow Submit Function
+function allowForm(form) {
+    form.button.disabled = false;
+    return false
+}
+
+//Red "X's" Function
+function crosses (div) {
+    div.textContent = 'x'
+    lineOne = document.createElement('h1')
+    lineOne.classList.add('diagnolLineOne');
+    div.append(lineOne);
+    lineTwo = document.createElement('h1')
+    lineTwo.classList.add('diagnolLineTwo');
+    div.append(lineTwo)
+}
+
+
+//Mouseover Function
+function mouseOver(div) {
+   
+    div.addEventListener('mouseenter', (event) => {
+        div.classList.replace("questions", "questions-color")
+    })
+    div.addEventListener('mouseleave', (event) => {
+        div.classList.replace("questions-color", "questions")
+    })
+}
 
 
 const easyQuestions = document.querySelectorAll("[id$='easy']")
@@ -306,8 +420,48 @@ const hardQuestions = document.querySelectorAll("[id$='hard']")
 
 hardQuestions.forEach(question => {
     question.textContent = 400;
-})
+})//})
+
+//Film Fetch
+fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
+.then(resp => resp.json())
+.then(questionsObject => {
+    let filmEasy = document.getElementById('F-easy')
+    let easy = easyQuestion(questionsObject)
+    submitAnswer(easy)
+    filmEasy.addEventListener('click', (e) => {
+        badAnswer(easy)
+        h2.innerHTML = easy.question
+        crosses(filmEasy)
 
 
+    })
+    let filmMed = document.getElementById('F-medium')
+    let question = mediumQuestion(questionsObject)[0]
+    submitAnswer(question)
+    filmMed.addEventListener('click', (e) => {
+        badAnswer(question)
+        h2.innerHTML = (question.question)
+        question.points = 200
+        crosses(filmMed)
 
-
+    })
+    let filmMed2 = document.getElementById('F-medium-2')
+    let med = mediumQuestion(questionsObject)[1]
+    submitAnswer(med)
+    filmMed2.addEventListener('click', (e) => {
+        badAnswer(med)
+        h2.innerHTML = (med.question)
+        med.points = 300
+        crosses(filmMed2)
+    })
+    let filmHard = document.getElementById('F-hard')
+    let hard = hardQuestion(questionsObject)
+    submitAnswer(hard)
+    filmHard.addEventListener('click', (e) => {
+        badAnswer(hard)
+        h2.innerHTML = hard.question
+        crosses(filmHard)
+    })
+    
+})})

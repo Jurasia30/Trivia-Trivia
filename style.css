@@ -20,12 +20,29 @@ body {
 ol {
   border: 5px solid;
 
+  font-family: "Comic Sans MS";
+  cursor: pointer;
+  
+
+
 }
+
+h1 {
+  font-size: 60px;
+  background-color: green;
+  border-color: green;
+
+
+}
+
+
 
 ul {
   display: inline-flex;
   list-style: square inside;
   padding: 0;
+
+
 }
 
 
@@ -34,7 +51,10 @@ ul {
   justify-content: center;
   overflow: auto;
   width: 100%;
+  
 }
+
+
 
 #music {
   position: relative;
@@ -44,10 +64,13 @@ ul {
 
 .questions {
   background-color: lightgrey;
-  width: 60px;
+  width: 100px;
   border: 15px solid purple;
-  padding: 50px;
+  padding: 10px;
   margin: 20px;
+  max-height: 15px;
+
+  
  
 
 }
@@ -76,9 +99,22 @@ ul {
 form {
 
   background: purple;
-  margin: 2em;
+  margin: auto;
+  width: 150px;
+  position: relative;
   border: ridge;
+  top: -150px;
 
+  transition: 1s;
+
+
+
+}
+
+form:hover {
+  transform:scale(1.3);
+  z-index:2;
+  
 
 }
 
@@ -89,9 +125,72 @@ form label {
 }
 
 #ScoreCount {
+  margin: auto;
   position: relative;
-  left: 495px;
-  top: 78px;
+  font-family: "Comic Sans MS";
   font-size: 40px;
-  font-family: "Comic Sans MS"
+  
+  
+ 
+
+  
 }
+
+::marker {
+  unicode-bidi: isolate;
+  font-variant-numeric: tabular-nums;
+  text-transform: none;
+  text-indent: 0px !important;
+  text-align: left !important;
+  text-align-last: left !important;
+}
+
+ul li {
+     padding-right: 10px;
+     padding-left: 20px;
+}
+
+label[for=trivia-name-input] {
+  color: red;
+}
+
+ .diagnolLineOne{
+
+  border-bottom: 10px solid rgb(255, 0, 0);
+  width: 45%;
+  transform: rotate(45deg);
+  transform-origin: left;
+  position: relative;
+  top: -72px;
+  left: 35px;
+  transition: 1s;
+  animation: fadeIn 2s;
+
+  
+
+  
+  }
+
+.diagnolLineTwo{
+
+    border-bottom: 10px solid red;
+    width: 45%;
+    transform: rotate(-45deg);
+    transform-origin: right;
+    position: relative;
+    top: -122px;
+    left: 21px;
+    transition: 1s;
+    animation: fadeIn 2s;
+
+    
+    }
+
+    #F-medium.questions{
+      max-height: 15px;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }

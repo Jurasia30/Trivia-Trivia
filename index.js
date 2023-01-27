@@ -7,6 +7,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
     let filmEasy = document.getElementById('F-easy')
     let easy = easyQuestion(questionsObject)
     submitAnswer(easy)
+    mouseOver(filmEasy)
     filmEasy.addEventListener('click', (e) => {
         renderAnswer(easy)
         h2.innerHTML = easy.question
@@ -16,6 +17,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
     let filmMed = document.getElementById('F-medium')
     let question = mediumQuestion(questionsObject)[0]
     submitAnswer(question)
+    mouseOver(filmMed)
     filmMed.addEventListener('click', (e) => {
         renderAnswer(question)
         h2.innerHTML = (question.question)
@@ -26,6 +28,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
     let filmMed2 = document.getElementById('F-medium-2')
     let med = mediumQuestion(questionsObject)[1]
     submitAnswer(med)
+    mouseOver(filmMed2)
     filmMed2.addEventListener('click', (e) => {
         renderAnswer(med)
         h2.innerHTML = (med.question)
@@ -36,6 +39,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
     let filmHard = document.getElementById('F-hard')
     let hard = hardQuestion(questionsObject)
     submitAnswer(hard)
+    mouseOver(filmHard)
     filmHard.addEventListener('click', (e) => {
         renderAnswer(hard)
         h2.innerHTML = hard.question
@@ -52,6 +56,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=17&type=multiple')
     let scienceEasy = document.getElementById('SC-easy')
     let easy = easyQuestion(questionsObject)
     submitAnswer(easy)
+    mouseOver(scienceEasy)
     scienceEasy.addEventListener('click', (e) => {
         renderAnswer(easy)
         h2.innerHTML = easy.question
@@ -61,6 +66,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=17&type=multiple')
     let scienceMed = document.getElementById('SC-medium')
     let question = mediumQuestion(questionsObject)[0]
     submitAnswer(question)
+    mouseOver(scienceMed)
     scienceMed.addEventListener('click', (e) => {
         renderAnswer(question)
         h2.innerHTML = (question.question)
@@ -71,6 +77,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=17&type=multiple')
     let scienceMed2 = document.getElementById('SC-medium-2')
     let med = mediumQuestion(questionsObject)[1]
     submitAnswer(med)
+    mouseOver(scienceMed2)
     scienceMed2.addEventListener('click', (e) => {
         renderAnswer(med)
         h2.innerHTML = (med.question)
@@ -81,6 +88,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=17&type=multiple')
     let scienceHard = document.getElementById('Sc-hard')
     let hard = hardQuestion(questionsObject)
     submitAnswer(hard)
+    mouseOver(scienceHard)
     scienceHard.addEventListener('click', (e) => {
         renderAnswer(hard)
         h2.innerHTML = hard.question
@@ -97,6 +105,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=12&type=multiple')
     let musicEasy = document.getElementById('M-easy')
     let easy = easyQuestion(questionsObject)
     submitAnswer(easy)
+    mouseOver(musicEasy)
     musicEasy.addEventListener('click', (e) => {
         renderAnswer(easy)
         h2.innerHTML = easy.question
@@ -106,6 +115,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=12&type=multiple')
     let musicMed = document.getElementById('M-medium')
     let question = mediumQuestion(questionsObject)[0]
     submitAnswer(question)
+    mouseOver(musicMed)
     musicMed.addEventListener('click', (e) => {
         renderAnswer(question)
         question.points = 200
@@ -116,6 +126,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=12&type=multiple')
     let musicMed2 = document.getElementById('M-medium-2')
     let med = mediumQuestion(questionsObject)[1]
     submitAnswer(med)
+    mouseOver(musicMed2)
     musicMed2.addEventListener('click', (e) => {
         renderAnswer(med)
         h2.innerHTML = (med.question)
@@ -126,6 +137,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=12&type=multiple')
     let musicHard = document.getElementById('M-hard')
     let hard = hardQuestion(questionsObject)
     submitAnswer(hard)
+    mouseOver(musicHard)
     musicHard.addEventListener('click', (e) => {
         renderAnswer(hard)
         h2.innerHTML = hard.question
@@ -142,6 +154,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=19&type=multiple')
     let mathEasy = document.getElementById('MA-easy')
     let easy = easyQuestion(questionsObject)
     submitAnswer(easy)
+    mouseOver(mathEasy)
     mathEasy.addEventListener('click', (e) => {
         renderAnswer(easy)
         h2.innerHTML = easy.question
@@ -151,6 +164,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=19&type=multiple')
     let mathMed = document.getElementById('MA-medium')
     let question = mediumQuestion(questionsObject)[0]
     submitAnswer(question)
+    mouseOver(mathMed)
     mathMed.addEventListener('click', (e) => {
         renderAnswer(question)
         h2.innerHTML = (question.question)
@@ -161,6 +175,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=19&type=multiple')
     let mathMed2 = document.getElementById('MA-medium-2')
     let med= mediumQuestion(questionsObject)[1]
     submitAnswer(med)
+    mouseOver(mathMed2)
     mathMed2.addEventListener('click', (e) => {
         renderAnswer(med)
         h2.innerHTML = (med.question)
@@ -171,6 +186,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=19&type=multiple')
     let mathHard = document.getElementById('MA-hard')
     let hard = hardQuestion(questionsObject)
     submitAnswer(hard)
+    mouseOver(mathHard)
     mathHard.addEventListener('click', (e) => {
         renderAnswer(hard)
         h2.innerHTML = hard.question
@@ -188,6 +204,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=21&type=multiple')
     let sportsEasy = document.getElementById('S-easy')
     let easy = easyQuestion(questionsObject)
     submitAnswer(easy)
+    mouseOver(sportsEasy)
     sportsEasy.addEventListener('click', (e) => {
         renderAnswer(easy)
         h2.innerHTML = easy.question
@@ -198,6 +215,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=21&type=multiple')
     let sportsMed = document.getElementById('S-medium')
     let question = mediumQuestion(questionsObject)[0]
     submitAnswer(question)
+    mouseOver(sportsMed)
     sportsMed.addEventListener('click', (e) => {
         renderAnswer(question)
         h2.innerHTML = (question.question)
@@ -209,6 +227,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=21&type=multiple')
     let sportsMed2 = document.getElementById('S-medium-2')
     let med = mediumQuestion(questionsObject)[1]
     submitAnswer(med)
+    mouseOver(sportsMed2)
     sportsMed2.addEventListener('click', (e) => {
         renderAnswer(med)
         h2.innerHTML = (med.question)
@@ -219,6 +238,7 @@ fetch('https://opentdb.com/api.php?amount=20&category=21&type=multiple')
     let sportsHard = document.getElementById('S-hard')
     let hard = hardQuestion(questionsObject)
     submitAnswer(hard)
+    mouseOver(sportsHard)
     sportsHard.addEventListener('click', (e) => {
         renderAnswer(hard)
         h2.innerHTML = hard.question
@@ -317,7 +337,6 @@ function randomizeAns(ansArray){
     
     while (i--) {
         j = Math.floor(Math.random() * (i+1));
-    
         temp = ansArray[i];
         ansArray[i] = ansArray[j];
         ansArray[j] = temp;
@@ -340,6 +359,7 @@ function allowForm(form) {
 
 //Red "X's" Function
 function crosses (div) {
+    div.textContent = 'x'
     lineOne = document.createElement('h1')
     lineOne.classList.add('diagnolLineOne');
     div.append(lineOne);
@@ -347,6 +367,19 @@ function crosses (div) {
     lineTwo.classList.add('diagnolLineTwo');
     div.append(lineTwo)
 }
+
+
+//Mouseover Function
+function mouseOver(div) {
+   
+    div.addEventListener('mouseenter', (event) => {
+        div.classList.replace("questions", "questions-color")
+    })
+    div.addEventListener('mouseleave', (event) => {
+        div.classList.replace("questions-color", "questions")
+    })
+}
+
 
 const easyQuestions = document.querySelectorAll("[id$='easy']")
 

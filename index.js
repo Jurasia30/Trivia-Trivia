@@ -266,7 +266,11 @@ function easyQuestion(questionsObject) {
     
 }
 
-
+function mediumQuestion(questionsObject) {
+    let questionArray = questionsObject.results
+    let question = questionArray.filter((element) => element.difficulty ==="medium")
+    return question
+}
 
 
 function hardQuestion(questionsObject) {
@@ -278,13 +282,6 @@ function hardQuestion(questionsObject) {
 
 const answerForm = document.getElementById('bottom')
 function submitAnswer(question) {
-    answerForm.addEventListener('submit', (event) => {
-        event.preventDefault()
-        const totalScore = document.querySelector('#ScoreAmount')
-        const playerInput = event.target['trivia-name-input'].value.toLowerCase()
-        const correctAnswer = question.correct_answer.toLowerCase()
-        function submitAnswer(question) {
-    let answerForm = document.getElementById('bottom')
     answerForm.addEventListener('submit', (event) => {
         event.preventDefault()
         const totalScore = document.querySelector('#ScoreAmount')
@@ -315,7 +312,7 @@ function submitAnswer(question) {
         answerForm.reset()
         stopForm(answerForm)   
     }    
-    )} 
+ })} 
 
 
 function crosses (div) {
@@ -326,11 +323,22 @@ function crosses (div) {
         lineTwo = document.createElement('h1')
         lineTwo.classList.add('diagnolLineTwo');
         div.append(lineTwo)
-=======
+}
+
 //Question Display
 const h2 = document.createElement('h2')
 const ul = document.createElement('ul')
 h2.textContent = ""
+h2.style.color = "black";
+h2.style.position = "relative"
+h2.style.fontSize = "30px";
+h2.style.top = "-100px"
+h2.textContent = "";
+ul.style.position = "relative";
+ul.style.fontSize = "30px";
+ul.style["text-align"] = "left";
+ul.style.top = "-125px"
+
 document.getElementById('trivia-display').append(h2, ul)
 
 //Render Answers
@@ -420,48 +428,5 @@ const hardQuestions = document.querySelectorAll("[id$='hard']")
 
 hardQuestions.forEach(question => {
     question.textContent = 400;
-})//})
+})
 
-//Film Fetch
-fetch('https://opentdb.com/api.php?amount=20&category=11&type=multiple')
-.then(resp => resp.json())
-.then(questionsObject => {
-    let filmEasy = document.getElementById('F-easy')
-    let easy = easyQuestion(questionsObject)
-    submitAnswer(easy)
-    filmEasy.addEventListener('click', (e) => {
-        badAnswer(easy)
-        h2.innerHTML = easy.question
-        crosses(filmEasy)
-
-
-    })
-    let filmMed = document.getElementById('F-medium')
-    let question = mediumQuestion(questionsObject)[0]
-    submitAnswer(question)
-    filmMed.addEventListener('click', (e) => {
-        badAnswer(question)
-        h2.innerHTML = (question.question)
-        question.points = 200
-        crosses(filmMed)
-
-    })
-    let filmMed2 = document.getElementById('F-medium-2')
-    let med = mediumQuestion(questionsObject)[1]
-    submitAnswer(med)
-    filmMed2.addEventListener('click', (e) => {
-        badAnswer(med)
-        h2.innerHTML = (med.question)
-        med.points = 300
-        crosses(filmMed2)
-    })
-    let filmHard = document.getElementById('F-hard')
-    let hard = hardQuestion(questionsObject)
-    submitAnswer(hard)
-    filmHard.addEventListener('click', (e) => {
-        badAnswer(hard)
-        h2.innerHTML = hard.question
-        crosses(filmHard)
-    })
-    
-})})
